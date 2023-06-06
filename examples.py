@@ -4,13 +4,13 @@ from build_joint_state_machine import construct_joint_state_machine
 from check_SPE_state_machine import check_SPE_state_machine, check_SPE_state_machine_by_graph
 
 """
-This file contains examples of strategy state machine for the paper "Subgame-perfect Cooperation in Networks".
+This file contains examples of strategy state machines for the paper "Subgame-perfect Cooperation in Networks".
 """
 
 
 def V_graph_PD_a_ver():
     """
-    Graph 1.2b with the prisoner's dilemma of 1.1b in the paper, with the strategies from section 4.
+    Graph 1.2b with the prisoner's dilemma of 1.1b in the paper, with the local strategies from section 4.
     A three players "V" graph: left - middle - right, with SPE strategies.
     """
     c = 2
@@ -132,7 +132,7 @@ def V_graph_PD_a_ver():
 
 def V_graph_PD_b_ver():
     """
-    Graph 1.2b with the prisoner's dilemma of 1.1a in the paper, with the strategies from section 4.
+    Graph 1.2b with the prisoner's dilemma of 1.1a in the paper, with the local strategies from section 5.
     A three players "V" graph: left - middle - right, with SPE strategies.
     The number of steps for the middle player to "gain the edge players trust back" is 2.
     """
@@ -253,7 +253,7 @@ def V_graph_PD_b_ver():
 
 def Four_players_line_PD_ver():
     """
-    An example of SPE strategies in a line of length 4. Players 0 and 1 play grim-trigger with each
+    An example of local SPE strategies in a line of length 4. Players 0 and 1 play grim-trigger with each
     other, and also players 2 and 3.
     """
     c = 3
@@ -318,7 +318,7 @@ def Four_players_line_PD_ver():
 
 def Four_players_cycle_PD_ver():
     """
-    An example of SPE strategies in an even length cycle of length 4. Players 0 and 1 play grim-trigger with each
+    An example of local SPE strategies in an even length cycle of length 4. Players 0 and 1 play grim-trigger with each
     other, and also players 2 and 3.
     """
     c = 3
@@ -384,7 +384,7 @@ def Four_players_cycle_PD_ver():
 
 def Five_players_cycle_PD_ver():
     """
-    An example of SPE strategies in an odd length cycle of length 5. Players 3 and 4 play grim-trigger with each
+    An example of local SPE strategies in an odd length cycle of length 5. Players 3 and 4 play grim-trigger with each
     other, while players 0,1 and 2 play the SPE strategies for a V graph, the same as in "V_graph_PD_a" function.
     """
     c = 3
@@ -524,7 +524,7 @@ def Five_players_cycle_PD_ver():
 
 def Star_three_leafs_PD():
     """
-    An example of SPE strategies in a star with a center and three leafs. Each of the leafs plays the same strategy as
+    An example of local SPE strategies in a star with a center and three leafs. Each of the leafs plays the same strategy as
     the edge players in the SPE strategies on the V graph (from the "V_graph_PD_a_ver" function). The strategy of the
     center is being calculated using Algorithm 4 from the paper, that find a best response given the other players
     state machines. Then, the function check that the new strategy, together with the leafs strategies, are indeed SPE.
@@ -652,7 +652,7 @@ def Star_three_leafs_PD():
 
 def Triangle_with_leaf_PD_ver():
     """
-    The same as in the "Star_three_leafs_PD" function, but when the first and second leaf are also connected between
+    The same as in the "Star_three_leafs_PD" function, but when the first and second leaves are also connected between
     them. The number of step for the middle player to gain trust back is now 2 instead of 1.
     """
     c = 4
